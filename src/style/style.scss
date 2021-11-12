@@ -1,0 +1,44 @@
+body {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+  .all_items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1 {
+      color: red;
+    }
+    .input_button {
+      input {
+        border: none;
+        margin-right: 20px;
+        outline: none;
+        padding: 0 10px;
+      }
+      input:focus {
+        border-bottom: 1px solid wheat;
+      }
+      button {
+        border: none;
+        background-color: blueviolet;
+        color: white;
+        padding: 5px 10px;
+      }
+    }
+  }
+  .todoItem {
+    width: 300px;
+    margin: 0 auto;
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid red;
+    }
+  }
+}
