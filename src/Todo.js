@@ -3,7 +3,8 @@ import './style/style.scss';
 import TodoItem from './components/TodoItem';
 import { connect } from 'react-redux';
 import AddTodos from './components/AddTodo';
-const Todo = ({todos}) => {
+import { deleteTodo } from './store/action/todo';
+const Todo = ({todos, deleteTodo}) => {
 
     return (
         <>
@@ -12,7 +13,9 @@ const Todo = ({todos}) => {
         <div className="todoItem">
          {
             todos.map(item => (
-                <TodoItem title={item.title}/>
+                <TodoItem title={item.title}
+                deleteTodo = {() => deleteTodo(item.id)}
+                />
             ))
          }
         </div>
@@ -25,5 +28,8 @@ const Todo = ({todos}) => {
 const mapStateToProps = (state) => ({
     todos: state.todo.todos
 })
+const mapDispatchToProps = ({
+    deleteTodo
+})
 
-export default connect (mapStateToProps) (Todo);
+export default connect (mapStateToProps,mapDispatchToProps) (Todo);

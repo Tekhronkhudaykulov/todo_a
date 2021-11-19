@@ -12,6 +12,11 @@ const todo = (state = initialState, action) => {
                     id:Math.random()
                 }]
             }
+            case 'deleteTodo' :
+                return {
+                    ...state,
+                    todos: state.todos.filter(item => item.id !== action.id)
+                }
         default :
             return state
     }

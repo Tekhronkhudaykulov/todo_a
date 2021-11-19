@@ -1,11 +1,11 @@
 import React from 'react'
 
-const TodoItem = ({title}) => {
+const TodoItem = ({title, deleteTodo}) => {
     return (
         <>
         <div className="item">
                 <p className="title">{title}</p>    
-                <div className="delete">x</div>
+                <div onClick={deleteTodo} className="delete">x</div>
         </div>
         </>
     )

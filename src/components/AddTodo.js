@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { addTodo } from '../store/action/todo';
 import { connect } from 'react-redux';
 
-const AddTodos = () => {
+const AddTodos = ({addTodo}) => {
     const [value, setValue] = useState('');
     return (
     <div className="all_items">
@@ -12,7 +12,6 @@ const AddTodos = () => {
         placeholder="add todo..."
         onChange={event => {
             setValue(event.target.value);
-
         }}
         value={value}
         onKeyDown={event => {
